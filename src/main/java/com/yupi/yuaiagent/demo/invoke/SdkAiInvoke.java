@@ -24,11 +24,12 @@ public class SdkAiInvoke {
                 .build();
         Message userMsg = Message.builder()
                 .role(Role.USER.getValue())
-                .content("你好，我是程序员鱼皮，正在带大家开发编程导航 codefather.cn 最新的原创项目 - AI 超级智能体")
+                .content("你是谁？")
                 .build();
         GenerationParam param = GenerationParam.builder()
                 // 若没有配置环境变量，请用百炼API Key将下行替换为：.apiKey("sk-xxx")
-                .apiKey(TestApiKey.API_KEY)
+                .messages(Arrays.asList(systemMsg, userMsg))
+                .apiKey("sk-ecece8582b1f4b508343b9aa565fd4e3")
                 // 此处以qwen-plus为例，可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
                 .model("qwen-plus")
                 .messages(Arrays.asList(systemMsg, userMsg))
