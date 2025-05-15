@@ -37,3 +37,4 @@ class LoveAppTest {
         Assertions.assertNotNull(loveReport);
     }
 }
+
